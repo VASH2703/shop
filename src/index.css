@@ -1,0 +1,26 @@
+:root {
+  --accent: #05048C;
+  --light: #F6F6F6;
+  --basic: #1E1E1E;
+  --text-h: 117%;
+  --number-h: 140%;
+
+}
+
+* {
+  font-family: 'Poiret One', sans-serif;
+  
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--basic);
+}
+
+@font-face {
+  font-family: 'Moniqa';
+  src: url('Moniqa-Display.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,64 @@
+.btn {
+  margin-right: 30px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  
+  outline: none;
+  cursor: pointer;
+
+  padding: 20px;
+  font-size: 20px;
+  line-height: var(--text-h);
+
+  color: var(--accent);
+  background: var(--light);
+  border: 0.7px solid var(--accent);
+
+  box-sizing: border-box;
+}
+
+.full {
+  width: 100%;
+}
+
+.price {
+  padding: 20px 0;
+  width: 129px;
+  font-size: 16px;
+  line-height: var(--number-h);
+}
+
+.cat {
+  padding: 15px 25px;
+}
+
+.arrow, .close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 0;
+}
+
+.arrow {
+  width: 60px;
+  height: 60px;
+}
+
+.close {
+  width: 50px;
+  height: 50px;
+}
+
+.btn:hover, .btn:focus {
+  color: var(--light);
+  background: var(--accent);
+}
+
+.btn[disabled] {
+  border-color: var(--basic);
+  color: var(--basic);
+  pointer-events: none;
+}
+
+    

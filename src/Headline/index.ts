@@ -1,0 +1,1 @@
+export { Hl1, Hl2, Hl3, Hl4, Hl5, Hl6 } from './headline';
