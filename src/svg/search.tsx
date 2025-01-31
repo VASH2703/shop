@@ -1,11 +1,6 @@
-interface MapProps {
-    width?: number;
-    height?: number;
-    color?: string;
-}
+import SvgProps from "./types";
   
-
-const Search = ({width = 27, height = 27, color='currentColor'}: MapProps) => {
+export const Search = ({width = 27, height = 27, color='currentColor'}: SvgProps) => {
     return (
         <svg width={width} height={height} fill="none" style={{ strokeWidth: 'var(--stroke-width)' }} xmlns="http://www.w3.org/2000/svg">
             <path d="M26 25.6259L21 20.7007" stroke={color} stroke-linecap="round"/>
@@ -13,6 +8,4 @@ const Search = ({width = 27, height = 27, color='currentColor'}: MapProps) => {
         </svg>
     );
 };
-    
-export default Search;
   
