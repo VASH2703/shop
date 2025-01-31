@@ -1,0 +1,56 @@
+.link {
+  margin-right: 30px;
+}
+
+.link:hover, .link:focus {
+  color: var(--accent);
+}
+
+.fill {
+  color: var(--accent);
+  --heart-fill: none;
+  --stroke-width: 2px;
+}
+
+.fill:hover,
+.fill:focus {
+  --heart-fill: currentColor;
+}
+
+.icon {
+  --stroke-width: 1px;
+}
+
+.icon:hover,
+.icon:focus {
+  --stroke-width: 2px;
+}
+
+.xs {
+  font-size: 16px;
+  line-height: 1.4;
+  text-shadow: 0.3px 0 0;
+}
+
+.s {
+  font-size: 20px;
+  line-height: 1.17;
+  text-shadow: 0.5px 0 0;
+}
+
+.m {
+  font-size: 24px;
+  line-height: 1.17;
+  text-shadow: 0.2px 0 0;
+}
+
+.l {
+  font-family: 'Moniqa';
+  font-size: 48px;
+}
+
+.xl {
+    font-family: 'Moniqa';
+    font-size: 64px;
+}
+

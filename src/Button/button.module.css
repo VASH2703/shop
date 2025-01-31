@@ -8,13 +8,25 @@
 
   padding: 20px;
   font-size: 20px;
+  text-shadow: 0.4px 0 0;
   line-height: var(--text-h);
 
   color: var(--accent);
   background: var(--light);
   border: 0.7px solid var(--accent);
 
-  box-sizing: border-box;
+  
+}
+
+.btn:hover, .btn:focus {
+  color: var(--light);
+  background: var(--accent);
+}
+
+.btn[disabled] {
+  border-color: var(--basic);
+  color: var(--basic);
+  pointer-events: none;
 }
 
 .full {
@@ -23,6 +35,7 @@
 
 .price {
   padding: 20px 0;
+  text-shadow: 0.2px 0 0;
   width: 129px;
   font-size: 16px;
   line-height: var(--number-h);
@@ -30,6 +43,7 @@
 
 .cat {
   padding: 15px 25px;
+  text-shadow: 0.3px 0 0;
 }
 
 .arrow, .close {
@@ -48,17 +62,6 @@
 .close {
   width: 50px;
   height: 50px;
-}
-
-.btn:hover, .btn:focus {
-  color: var(--light);
-  background: var(--accent);
-}
-
-.btn[disabled] {
-  border-color: var(--basic);
-  color: var(--basic);
-  pointer-events: none;
 }
 
     

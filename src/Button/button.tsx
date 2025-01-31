@@ -10,7 +10,7 @@ export const Button =  forwardRef <HTMLButtonElement, ButtonProps> ((props, ref)
         price: style.price,
         cat: style.cat,
         arrow: style.arrow, 
-        close: style.close,
+        close: style.close
     };
 
     const buttonClasses = classNames (
