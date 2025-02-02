@@ -3,9 +3,13 @@ import { Arrow, Close, Heart, Map, Search, Bag } from './svg';
 import { Hl1, Hl2, Hl3, Hl4, Hl5, Hl6 } from './Headline';
 import { Button } from './Button';
 import { Link } from './Link';
+import { Input } from './Input';
+import { Select } from './Select';
+import { Counter } from './Counter';
+import { RadioGroup } from './Radio';
 
 function App() {
-
+    
     return (
         <>
             <Hl1> Заголовок </Hl1>
@@ -80,6 +84,13 @@ function App() {
             <Link size="XL"> 
                 CRYSTAL
             </Link>
+            <Input placeholder="Ваше имя" />
+            <Input placeholder="Неверно заполненные данные" error/>
+            <Select values={['50 000 ₽','100 000 ₽','200 000 ₽']}/>
+            <Select values={['16 размер','17 размер','18 размер']}/>
+            <div style={{width: '607px'}}> <Select textInput values={['кошка','кошка киска','киска жопка']}/></div>
+            <Counter/>
+            <RadioGroup values={['Картой онлайн', 'СБП']}></RadioGroup>
         </> 
     )
 }

@@ -4,3 +4,4 @@ export { Close } from './close';
 export { Heart }from './heart';
 export { Map } from './map';
 export { Search } from './search';
+export { Radio } from './radio';

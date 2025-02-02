@@ -1,0 +1,17 @@
+.input {
+  line-height: 1.4;
+  padding: 20px 30px;
+  border-radius: 10px;
+  border: 1px solid var(--basic);
+  /* width: 607px;  */
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.error {
+  border-color: var(--red);
+}
+
+.error::placeholder {
+  color: var(--red);
+}
