@@ -1,8 +1,8 @@
 import { forwardRef, useState } from "react";
 import { RadioGroupProps, InputItemProps } from "./radio.types";
 import style from './radio.module.css';
-import { Radio } from "../svg";
-import hashId from "../hashId";
+import { Radio } from "../../../svg";
+import hashId from "../../../hashId";
 
 export const RadioItem = forwardRef<HTMLInputElement,InputItemProps> ((props, ref) => {
     const {children, disabled, checked, name, value, onClick, className} = props;
@@ -40,6 +40,8 @@ export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps> ((props, r
                 <RadioItem
                     disabled={disabled}
                     name={name}
+                    id={name+' '+index}
+                    key={name+' '+index}
                     checked={checked === index ? true : false}
                     onClick={!disabled ? () => handleClick(index) : () => {}}
                 >

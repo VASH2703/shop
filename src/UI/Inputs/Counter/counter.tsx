@@ -37,15 +37,14 @@ const Counter = forwardRef<HTMLDivElement, CounterProps> ((props, ref ) => {
         {className: className}
     )
     return (
-        <div ref={ref} className={style.block}>
+        <div ref={ref} className={style.block} {...props}>
             <button onClick={dec} className={style.btn+' '+style.dec}>-</button>
             <input
-                
                 type="text"
                 className={stylesInput} 
-                
+                disabled={!input}
                 value={value}
-                onChange={hundleChange}
+                onChange={input ? hundleChange : undefined}
                 {...props}
             />
             <button onClick={inc} className={style.btn+' '+style.inc}>+</button>

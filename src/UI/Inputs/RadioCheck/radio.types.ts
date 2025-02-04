@@ -16,3 +16,11 @@ export interface InputItemProps extends Omit<HTMLAttributes<HTMLDivElement>, 'cl
     value?: string;
     className?: string;
 }
+
+export interface CheckListProps extends Omit<HTMLAttributes<HTMLDivElement>, 'className'>{
+    values: string[];
+    disabled?: boolean;
+    name?: string;
+    selected?: boolean[];
+    className?: string;
+}

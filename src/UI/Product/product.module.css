@@ -1,0 +1,73 @@
+.block {
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.frame {
+    position: relative;
+}
+
+.imgLink {
+    outline: none;
+}
+
+.imgLink:focus .img, .imgLink:hover .img {
+    filter: brightness(0.9);
+}
+
+.img {
+    width: 100%;
+    mask-image: url('mask.svg');
+    -webkit-transition: -webkit-filter 0.5s;
+    -o-transition: filter 0.5s;
+    transition: filter 0.5s;
+}
+
+.favorite {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:13.6%;
+    height:14.5%;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    color: var(--basic);
+}
+
+.favorite:hover, .favorite:focus {
+    --stroke-width: 2px;
+    color: var(--accent);
+}
+
+.oldPrice {
+    color: black;
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+    opacity: 0.3;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.price {
+    font-size: 24px;
+}
+
+.name {
+    font-size: 24px;
+    color: var(--basic);
+    text-decoration: none;
+}
+
+.rating {
+    display: flex;
+    gap: 10px;
+    color: var(--accent);
+}
+
+

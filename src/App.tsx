@@ -1,12 +1,11 @@
 import './App.css';
 import { Arrow, Close, Heart, Map, Search, Bag } from './svg';
-import { Hl1, Hl2, Hl3, Hl4, Hl5, Hl6 } from './Headline';
-import { Button } from './Button';
-import { Link } from './Link';
-import { Input } from './Input';
-import { Select } from './Select';
-import { Counter } from './Counter';
-import { RadioGroup } from './Radio';
+import { Hl1, Hl2, Hl3, Hl4, Hl5, Hl6 } from './UI';
+import { CheckList, RadioGroup, Input, Select, Counter} from './UI';
+import { Button } from './UI';
+import { Link } from './UI';
+import { Gallery, Offer, OfferCat } from './UI';
+import { Product } from './UI';
 
 function App() {
     
@@ -88,9 +87,19 @@ function App() {
             <Input placeholder="Неверно заполненные данные" error/>
             <Select values={['50 000 ₽','100 000 ₽','200 000 ₽']}/>
             <Select values={['16 размер','17 размер','18 размер']}/>
-            <div style={{width: '607px'}}> <Select textInput values={['кошка','кошка киска','киска жопка']}/></div>
+            <div style={{width: '607px'}}> <Select allowinput values={['кошка','кошка киска','киска жопка']}/></div>
             <Counter/>
             <RadioGroup values={['Картой онлайн', 'СБП']}></RadioGroup>
+            <CheckList values={['Картой онлайн', 'СБП', 'Картой онлайн', 'СБП']}/>
+            <Gallery>
+               <Offer price='44 000 ₽' name='Кольцо из белого золота с бриллиантами' imageSrc='image1.png' href='/' accent/>
+               <Offer price='62 990 ₽ ' imageSrc='image.png' href='/'/>
+               <Offer price='62 990 ₽ ' imageSrc='image.png' href='/'/>
+               <OfferCat imageSrc='image1.png' name='"MINIMAL"' collection href='/'/>
+               <OfferCat imageSrc='image1.png' name='Подвески' href='/'/>
+               <Product href='/' name='Серьги из белого золота с бриллиантами' price='399 996 ₽' oldPrice='999 990 ₽' rating={3.5} imageSrc='image1.png' />
+            </Gallery>
+            
         </> 
     )
 }

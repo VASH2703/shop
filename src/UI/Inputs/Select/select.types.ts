@@ -6,6 +6,6 @@ export interface SelectProps extends Omit<HTMLAttributes<HTMLDivElement>, 'class
     disabled?: boolean;
     name?: string;
     index?: number;
-    textInput?: boolean;
+    allowinput?: boolean;
     className?: string;
 }

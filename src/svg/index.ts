@@ -5,3 +5,6 @@ export { Heart }from './heart';
 export { Map } from './map';
 export { Search } from './search';
 export { Radio } from './radio';
+export { Check } from './check';
+export { LongArrow } from './longarrow';
+export { Star } from './star';

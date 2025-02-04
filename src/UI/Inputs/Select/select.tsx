@@ -1,14 +1,14 @@
 import { forwardRef, useState, useRef, useEffect, ChangeEvent, KeyboardEvent, useCallback } from 'react';
-import hashId from '../hashId';
+import hashId from '../../../hashId';
 import select from './select.module.css';
 import inselect from './inselect.module.css';
 import { SelectProps } from './select.types';
-import { Arrow } from '../svg';
+import { Arrow } from '../../../svg';
 
 const Select = forwardRef<HTMLDivElement, SelectProps> (( props, ref) => {
     
-    const { hint, disabled, values, name = hashId(), index, textInput, className } = props;
-    const style = textInput ? inselect : select; //select с поиском или без
+    const { hint, disabled, values, name = hashId(), index, allowinput, className } = props;
+    const style = allowinput ? inselect : select; //select с поиском или без
 
     const [ value, setValue ] = useState<string>(index ? values[index] : (!hint ? values[0] : ''));
     const [ visibleValues, setVisibleValues] = useState<string[]>(values); //сорт. список эл.
@@ -52,7 +52,7 @@ const Select = forwardRef<HTMLDivElement, SelectProps> (( props, ref) => {
             refInput.current && 
             !refList.current.contains(event.target as Node) && //проверяет список
             event.target !== refInput.current) { //проверяет поле
-            handleClick(textInput ? 0 : undefined);
+            handleClick(allowinput ? 0 : undefined);
         }
     },[refList, refInput]);
 
@@ -73,7 +73,7 @@ const Select = forwardRef<HTMLDivElement, SelectProps> (( props, ref) => {
     }, [visible, handleOutsideClick]);
 
     return (
-        <div ref={ref} id={name} className={`${style.block} ${className}`} >
+        <div ref={ref} id={name} className={`${style.block} ${className}`} {...props} >
             <input
                 ref={refInput}
                 type="text"
@@ -81,13 +81,14 @@ const Select = forwardRef<HTMLDivElement, SelectProps> (( props, ref) => {
                 name={name}
                 placeholder={hint}
                 value={value}
+                disabled={disabled}
                 onKeyDown={!disabled&&visible ? handleKeyDown : undefined}
-                onChange={textInput&&!disabled ? handleChange : undefined}
+                onChange={allowinput&&!disabled ? handleChange : () =>{}}
                 onMouseDown={!disabled&&visible ? () => setVisible(false) : undefined} //танцы с бубном для закрытия
                 onFocus={!disabled ? () => setVisible(true) : undefined} //открытие списка при фокусе(и, соот., клике)
                 onClick={!disabled&&!visible ? ()=>handleClick() : undefined} //танцы с бубном для потери фокуса при закрытии
             />
-            <Arrow className={style.arrow} angle={visible ? 180 : 0} width={textInput ? 13 : 16} height={8}/>
+            <Arrow className={style.arrow} angle={visible ? 180 : 0} width={allowinput ? 13 : 16} height={8}/>
             
             <div ref={refList} className={`${visible ? style.open : ''} ${style.list}`} >
                 
@@ -101,7 +102,7 @@ const Select = forwardRef<HTMLDivElement, SelectProps> (( props, ref) => {
                         {item}
                     </div>
                 ))}
-                {textInput && <div className={style.shadow}></div>/*танцы с бубном для корректного отображения тени*/} 
+                {allowinput && <div className={style.shadow}></div>/*танцы с бубном для корректного отображения тени*/} 
             </div>
         </div>
     );
