@@ -7,7 +7,7 @@ import { Star } from '../../svg';
 import { Button } from '../Button';
 
 export const Product =  forwardRef <HTMLDivElement, ProductProps> ((props, ref) => {
-    const { name, price, oldPrice, href, imageSrc, rating=0, className } = props;
+    const { name, price, oldPrice, href, imageSrc, rating=0, className=''} = props;
 
     const drawRating = useMemo(() => {
         let res = [];
@@ -31,7 +31,7 @@ export const Product =  forwardRef <HTMLDivElement, ProductProps> ((props, ref) 
 
 
     return (
-        <div className={classNames(style.block,{className: className})} ref={ref}>
+        <div className={classNames(style.block,{[className]: className})} ref={ref}>
             <div className={style.frame}>
                 <a href={href} className={style.imgLink}>
                     <img src={imageSrc} className={style.img}/>

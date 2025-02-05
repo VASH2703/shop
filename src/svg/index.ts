@@ -8,3 +8,4 @@ export { Radio } from './radio';
 export { Check } from './check';
 export { LongArrow } from './longarrow';
 export { Star } from './star';
+export { Romb } from './romb';

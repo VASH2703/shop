@@ -3,8 +3,8 @@ import classNames from 'classnames';
 import style from './link.module.css';
 import { LinkProps } from './link.types';
 
-export const Link =  forwardRef <HTMLAnchorElement, LinkProps> ((props, ref) => {
-    const { children, size = "S", disabled, fill, icon, className } = props;
+export const Link =  forwardRef<HTMLAnchorElement, LinkProps> ((props, ref) => {
+    const { children, fontSize = "S", fill, icon, className='' } = props;
 
     const sizeMap = {
         XS: style.xs,
@@ -13,23 +13,22 @@ export const Link =  forwardRef <HTMLAnchorElement, LinkProps> ((props, ref) => 
         L: style.l,
         XL: style.xl
     };
-
+    
     const buttonClasses = classNames (
         style.link,
-        sizeMap[size],
+        sizeMap[fontSize],
         {[style.fill]: fill,
         [style.icon]: icon,
-        className: className}
+        [className]: className}
     );
     
     return (
         <a
-            className={buttonClasses}
-            disabled={disabled}
-            ref={ref}
             {...props}
+            className={buttonClasses}
+            ref={ref}
         >
             {children}
         </a>
-    );
-});
+    )
+})

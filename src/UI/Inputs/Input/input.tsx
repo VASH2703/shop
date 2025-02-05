@@ -13,10 +13,10 @@ const Input = forwardRef<HTMLInputElement, InputProps> ((props, ref ) => {
     )
     return (
         <input
+            {...props}
             type="text"
             className={stylesInput} 
-            ref={ref} 
-            {...props}
+            ref={ref}
         />
     );
 });

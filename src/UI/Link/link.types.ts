@@ -1,12 +1,11 @@
-import { ReactNode, HTMLAttributes } from 'react';
+import { ReactNode, HTMLProps } from 'react';
 
 declare const VALID_SIZE_VALUES: readonly ["XS", "S", "M", "L", "XL", undefined];
 declare type SizeValue = typeof VALID_SIZE_VALUES[number];
 
-export interface LinkProps extends Omit<HTMLAttributes<HTMLAnchorElement>, 'className'> {
+export interface LinkProps extends Omit<HTMLProps<HTMLAnchorElement>, 'className'> {
     children: ReactNode;
-    size?: SizeValue;
-    disabled?: boolean;
+    fontSize?: SizeValue;
     fill?: boolean;
     icon?: boolean;
     className?: string;

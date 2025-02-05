@@ -1,6 +1,6 @@
-import { HTMLAttributes } from "react";
+import { HTMLProps } from "react";
 
-export interface RadioGroupProps extends Omit<HTMLAttributes<HTMLDivElement>, 'className'>{
+export interface RadioGroupProps extends Omit<HTMLProps<HTMLDivElement>, 'className'>{
     values: string[];
     disabled?: boolean;
     name?: string;
@@ -8,7 +8,7 @@ export interface RadioGroupProps extends Omit<HTMLAttributes<HTMLDivElement>, 'c
     className?: string;
 }
 
-export interface InputItemProps extends Omit<HTMLAttributes<HTMLDivElement>, 'className'>{
+export interface InputItemProps extends Omit<HTMLProps<HTMLDivElement>, 'className'>{
     children: string;
     disabled?: boolean;
     checked?: boolean;
@@ -17,10 +17,10 @@ export interface InputItemProps extends Omit<HTMLAttributes<HTMLDivElement>, 'cl
     className?: string;
 }
 
-export interface CheckListProps extends Omit<HTMLAttributes<HTMLDivElement>, 'className'>{
+export interface CheckListProps extends Omit<HTMLProps<HTMLDivElement>, 'className'>{
     values: string[];
     disabled?: boolean;
     name?: string;
-    selected?: boolean[];
+    selectedIndex?: boolean[];
     className?: string;
 }

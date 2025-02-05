@@ -7,7 +7,7 @@ export const CheckBox = forwardRef<HTMLInputElement,InputItemProps> ((props, ref
     const {children, disabled, checked = false, name, value, onClick, className} = props;
 
     return (
-        <div className={`${style.checkboxBlock} ${className || ''}`} onClick={onClick} {...props}>
+        <div {...props} className={`${style.checkboxBlock} ${className || ''}`} onClick={onClick} >
             <input
                 ref={ref}
                 type="checkbox"
@@ -24,10 +24,10 @@ export const CheckBox = forwardRef<HTMLInputElement,InputItemProps> ((props, ref
 });
 
 export const CheckList = forwardRef<HTMLDivElement, CheckListProps> ((props, ref) => {
-    const {title, values, disabled, selected, name, className} = props;
+    const {title, values, disabled, selectedIndex, name, className} = props;
 
     const length = values.length;
-    const [select, setSelect] = useState(selected || Array(length).fill(false));
+    const [select, setSelect] = useState(selectedIndex || Array(length).fill(false));
 
     const handleClick = (index: number) => {
         const newSelect = [...select];
@@ -36,7 +36,7 @@ export const CheckList = forwardRef<HTMLDivElement, CheckListProps> ((props, ref
     }
 
     return (
-        <div className={`${style.block} ${className || ''}`} ref={ref} {...props}>
+        <div {...props} className={`${style.block} ${className || ''}`} ref={ref} >
             {title && <div className={style.title}>{title}</div>}
             {values.map((item, index) => (
                     <CheckBox

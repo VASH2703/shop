@@ -4,11 +4,11 @@ import classNames from 'classnames';
 import { GalleryProps, OfferProps } from './gallery.types';
 
 export const Offer =  forwardRef <HTMLAnchorElement, OfferProps> ((props, ref) => {
-    const { price, name, href, imageSrc, accent = false, className } = props;
+    const { price, name, href, imageSrc, accent = false, className=''} = props;
 
     const styleBlock = classNames (
         style.block,
-        {className: className,
+        {[className]: className,
         [style.accent]: accent}
     )
 

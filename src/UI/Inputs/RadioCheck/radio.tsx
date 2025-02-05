@@ -8,7 +8,7 @@ export const RadioItem = forwardRef<HTMLInputElement,InputItemProps> ((props, re
     const {children, disabled, checked, name, value, onClick, className} = props;
 
     return (
-        <div className={`${style.radioBlock} ${className || ''}`} onClick={onClick}  {...props}>
+        <div {...props} className={`${style.radioBlock} ${className || ''}`} onClick={onClick}  >
             <input
                 type="radio"
                 value={value || children}
@@ -35,7 +35,7 @@ export const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps> ((props, r
     }
 
     return (
-        <div className={`${style.block} ${className || ''}`} ref={ref} {...props}>
+        <div {...props} className={`${style.block} ${className || ''}`} ref={ref} >
             {values.map((item, index) => (
                 <RadioItem
                     disabled={disabled}

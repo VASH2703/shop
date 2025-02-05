@@ -73,7 +73,7 @@ const Select = forwardRef<HTMLDivElement, SelectProps> (( props, ref) => {
     }, [visible, handleOutsideClick]);
 
     return (
-        <div ref={ref} id={name} className={`${style.block} ${className}`} {...props} >
+        <div {...props} ref={ref} id={name} className={`${style.block} ${className}`} >
             <input
                 ref={refInput}
                 type="text"

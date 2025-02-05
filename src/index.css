@@ -31,8 +31,11 @@
 body {
   color: var(--basic);
   background: var(--light);
-  margin: 20px;
-  height: 10000px;
   line-height: 1.17;
+}
+
+main {
+  margin-top:206px;
+  padding:100px;
 }
 

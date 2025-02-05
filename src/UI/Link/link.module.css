@@ -1,6 +1,6 @@
 .link {
-  margin-right: 30px;
-  margin-bottom: 20px;
+  text-decoration: none;
+  color: var(--basic);
 }
 
 .link:hover, .link:focus {
@@ -51,10 +51,12 @@
 .l {
   font-family: 'Moniqa';
   font-size: 48px;
+  line-height: 1.04;
 }
 
 .xl {
   font-family: 'Moniqa';
   font-size: 64px;
+  line-height: 1.04;
 }
 

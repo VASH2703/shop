@@ -13,7 +13,7 @@ const alingMap = {
 export const Hl1 = forwardRef<HTMLHeadingElement, HeadlineProps> ((props, ref) => {
     const {children, textAling, className} = props;
     return (
-        <h1 className={`${style.h1} ${textAling && alingMap[textAling]} ${className || ''}`} ref={ref} {...props} >
+        <h1 {...props} className={`${style.h1} ${textAling && alingMap[textAling]} ${className || ''}`} ref={ref} >
             {children}
         </h1>
     );
@@ -22,7 +22,7 @@ export const Hl1 = forwardRef<HTMLHeadingElement, HeadlineProps> ((props, ref) =
 export const Hl2 = forwardRef<HTMLHeadingElement, HeadlineProps> ((props, ref) => {
     const {children, textAling, className} = props;
     return (
-        <h2 className={`${style.h2} ${textAling && alingMap[textAling]} ${className || ''}`} ref={ref} {...props} >
+        <h2 {...props} className={`${style.h2} ${textAling && alingMap[textAling]} ${className || ''}`} ref={ref} >
             {children}
         </h2>
     );
@@ -31,7 +31,7 @@ export const Hl2 = forwardRef<HTMLHeadingElement, HeadlineProps> ((props, ref) =
 export const Hl3 = forwardRef<HTMLHeadingElement, HeadlineProps> ((props, ref) => {
     const {children, textAling, className} = props;
     return (
-        <h3 className={`${style.h3} ${textAling && alingMap[textAling]} ${className || ''}`} ref={ref} {...props} >
+        <h3 {...props} className={`${style.h3} ${textAling && alingMap[textAling]} ${className || ''}`} ref={ref} >
             {children}
         </h3>
     );
@@ -40,7 +40,7 @@ export const Hl3 = forwardRef<HTMLHeadingElement, HeadlineProps> ((props, ref) =
 export const Hl4 = forwardRef<HTMLHeadingElement, HeadlineProps> ((props, ref) => {
     const {children, textAling, className} = props;
     return (
-        <h4 className={`${style.h4} ${textAling && alingMap[textAling]} ${className || ''}`} ref={ref} {...props} >
+        <h4 {...props} className={`${style.h4} ${textAling && alingMap[textAling]} ${className || ''}`} ref={ref} >
             {children}
         </h4>
     );
@@ -49,7 +49,7 @@ export const Hl4 = forwardRef<HTMLHeadingElement, HeadlineProps> ((props, ref) =
 export const Hl5 = forwardRef<HTMLHeadingElement, HeadlineProps> ((props, ref) => {
     const {children, textAling, className} = props;
     return (
-        <div className={`${style.h5} ${textAling && alingMap[textAling]} ${className || ''}`} ref={ref} {...props} >
+        <div {...props} className={`${style.h5} ${textAling && alingMap[textAling]} ${className || ''}`} ref={ref} >
             {children}
         </div>
     );
@@ -58,7 +58,7 @@ export const Hl5 = forwardRef<HTMLHeadingElement, HeadlineProps> ((props, ref) =
 export const Hl6 = forwardRef<HTMLHeadingElement, HeadlineProps> ((props, ref) => {
     const {children, textAling, className} = props;
     return (
-        <div className={`${style.h6} ${textAling && alingMap[textAling]} ${className || ''}`} ref={ref} {...props} >
+        <div {...props} className={`${style.h6} ${textAling && alingMap[textAling]} ${className || ''}`} ref={ref} >
             {children}
         </div>
     );

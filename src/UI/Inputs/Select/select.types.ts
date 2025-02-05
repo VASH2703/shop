@@ -1,6 +1,6 @@
-import { HTMLAttributes } from 'react';
+import { HTMLProps } from 'react';
 
-export interface SelectProps extends Omit<HTMLAttributes<HTMLDivElement>, 'className'>{
+export interface SelectProps extends Omit<HTMLProps<HTMLDivElement>, 'className'>{
     hint?: string;
     values: string[];
     disabled?: boolean;

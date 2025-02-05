@@ -4,7 +4,7 @@ import style from './counter.module.css';
 import { CounterProps } from './counter.types';
 
 const Counter = forwardRef<HTMLDivElement, CounterProps> ((props, ref ) => {
-    const {min=0, max, step=1, input, className } = props;
+    const {min=0, max, step=1, input, className=''} = props;
 
     const [value, setValue] = useState<number>(0);
 
@@ -34,10 +34,10 @@ const Counter = forwardRef<HTMLDivElement, CounterProps> ((props, ref ) => {
     }
     const stylesInput = classNames (
         style.input,
-        {className: className}
+        {[className]: className}
     )
     return (
-        <div ref={ref} className={style.block} {...props}>
+        <div {...props} ref={ref} className={style.block} >
             <button onClick={dec} className={style.btn+' '+style.dec}>-</button>
             <input
                 type="text"
@@ -45,7 +45,6 @@ const Counter = forwardRef<HTMLDivElement, CounterProps> ((props, ref ) => {
                 disabled={!input}
                 value={value}
                 onChange={input ? hundleChange : undefined}
-                {...props}
             />
             <button onClick={inc} className={style.btn+' '+style.inc}>+</button>
         </div>
