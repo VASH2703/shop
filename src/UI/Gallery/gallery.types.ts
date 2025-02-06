@@ -16,6 +16,14 @@ export interface GalleryProps {
     className?: string;
 }
 
+export interface AccentRowProps {
+    children: ReactNode;
+    oldColumn?: number;
+    newColumn?: number;
+    gap?: string;
+    className?: string;
+}
+
 export interface OfferCatProps {
     name: string;
     href: string;

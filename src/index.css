@@ -39,3 +39,14 @@ main {
   padding:100px;
 }
 
+img {
+  width: 100%;
+}
+
+section {
+  margin: 100px 0;
+}
+
+h1:not(:first-child) {
+  margin-top: 100px;
+}

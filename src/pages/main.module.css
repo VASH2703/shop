@@ -1,0 +1,29 @@
+.slogan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+}
+
+.description {
+    font-size: 6vh;
+    text-align: center;
+}
+
+.img {
+    width:50%;
+}
+
+.hits {
+    position:relative;
+}
+
+.toCat {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: calc( ( 100% - 200px ) / 4) ;
+}
+.cataccent {
+    grid-column: span 3;
+}
