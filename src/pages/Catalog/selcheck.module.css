@@ -1,0 +1,49 @@
+.block {
+    position: relative;
+    width: fit-content;
+}
+
+.selected {
+    display: flex;
+    align-items: center;
+    height:40px;
+    gap: 10px; 
+    outline:none;
+    cursor: pointer;
+}
+
+.arrow {
+    -webkit-transition: -webkit-transform .3s;
+    -o-transition: transform .3s;
+    transition: transform .3s;
+}
+
+.list {
+    position:absolute;
+    top:calc(100% + 20px);
+    left:0;
+    width: max-content;
+}
+
+.list.open {
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+.list * {
+    line-height: 0;
+    opacity: 0;
+    transition: none;
+    margin: 0;
+}
+
+.list.open * {
+    opacity: 1;
+    line-height: 1.4;
+    transition: line-height 0.5s;
+}

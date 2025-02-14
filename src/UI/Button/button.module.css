@@ -1,21 +1,18 @@
 .btn {
-  border-radius: 12px;
-  
-  outline: none;
-  cursor: pointer;
-
+  display: inline-block;
+  width: fit-content;
   padding: 20px;
   font-size: 20px;
   font-weight: 700;
-  /* text-shadow: 0.4px 0 0; */
   line-height: var(--text-h);
   text-decoration: none;
   text-align: center;
-
   color: var(--accent);
   background: var(--light);
+  border-radius: 12px;
   border: 0.7px solid var(--accent);
-
+  outline: none;
+  cursor: pointer;
   -webkit-transition: -webkit-background 0.3s -webkit-color 0.3s;
   -o-transition: background 0.3s color 0.3s;
   transition: background 0.3s, color 0.3s;
@@ -34,20 +31,6 @@
 
 .full {
   width: 100%;
-}
-
-.price {
-  padding: 20px 0;
-  text-shadow: 0.2px 0 0;
-  width: 129px;
-  font-size: 16px;
-  line-height: var(--number-h);
-}
-
-.cat {
-  padding: 15px 25px;
-  font-weight: 600;
-  /* text-shadow: 0.3px 0 0; */
 }
 
 .arrow, .close {

@@ -1,7 +1,6 @@
 .block {
     position: relative;
     width: fit-content;
-    margin-bottom: 20px;
 }
 
 .block:has(.open) {

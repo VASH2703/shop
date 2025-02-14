@@ -1,19 +1,19 @@
 import { forwardRef} from 'react';
 import classNames from 'classnames';
 import style from './input.module.css';
-import { InputProps } from './input.types';
+import { InputProps, TextAreaProps } from './input.types';
 
-const Input = forwardRef<HTMLInputElement, InputProps> ((props, ref ) => {
-    
+export const Input = forwardRef<HTMLInputElement, InputProps> ((props, ref ) => {
+    const { error, className ='', ...also } = props;
 
     const stylesInput = classNames (
         style.input,
-        {[style.error]: props.error,
-        className: props.className}
+        className,
+        {[style.error]: props.error}
     )
     return (
         <input
-            {...props}
+            {...also}
             type="text"
             className={stylesInput} 
             ref={ref}
@@ -21,6 +21,21 @@ const Input = forwardRef<HTMLInputElement, InputProps> ((props, ref ) => {
     );
 });
 
-export default Input;
+export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps> ((props, ref ) => {
+    const { error, className ='', ...also } = props;
+
+    const stylesInput = classNames (
+        style.input,
+        className,
+        {[style.error]: props.error}
+    )
+    return (
+        <textarea
+            {...also}
+            className={stylesInput} 
+            ref={ref}
+        />
+    );
+});
 
 

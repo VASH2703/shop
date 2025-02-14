@@ -1,0 +1,28 @@
+.content {
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.map {
+    min-width: 60%;
+    aspect-ratio: 3 / 2;
+}
+
+.feedback, .info, .form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.info {
+    gap: 30px;
+}
+
+.form {
+    gap: 20px;
+}
+
+.text {
+    flex: 1;
+}

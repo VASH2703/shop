@@ -1,4 +1,4 @@
 export { Counter } from './Counter';
-export { Input } from './Input';
+export { Input, TextArea } from './Input';
 export { Select } from './Select';
-export { RadioGroup, RadioItem, CheckList, CheckBox } from './RadioCheck';
+export { RadioItem, CheckBox } from './RadioCheck';

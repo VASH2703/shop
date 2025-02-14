@@ -1,0 +1,44 @@
+.card {
+    display: flex;
+    gap:50px;
+}
+
+.img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    aspect-ratio: 2 / 1; 
+    border-radius: 20px;
+    background: #000039;
+    color: var(--light);
+    flex-shrink: 0;
+    align-self: flex-start;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.prices {
+    display: flex;
+    gap: 25px;
+}
+
+.active {
+    color: var(--light);
+    background: var(--accent);
+}
+
+@media (max-width: 1440px) {
+    .card {
+        flex-direction: column;  
+    }
+
+    .img {
+        width:100%;
+    }
+
+}

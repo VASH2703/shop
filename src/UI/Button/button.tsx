@@ -7,8 +7,6 @@ export const Button =  forwardRef<HTMLButtonElement, ButtonProps> ((props, ref) 
     const { children, styleType, full, className=''} = props;
 
     const styleMap = {
-        price: style.price,
-        cat: style.cat,
         arrow: style.arrow, 
         close: style.close
     };
@@ -35,8 +33,6 @@ export const BtnAnchor =  forwardRef <HTMLAnchorElement, BtnAnchoreProps> ((prop
     const { children, kind, full, className=''} = props;
 
     const styleMap = {
-        price: style.price,
-        cat: style.cat,
         arrow: style.arrow, 
         close: style.close
     };

@@ -1,26 +1,11 @@
 import { HTMLProps } from "react";
 
-export interface RadioGroupProps extends Omit<HTMLProps<HTMLDivElement>, 'className'>{
-    values: string[];
-    disabled?: boolean;
-    name?: string;
-    index?: number;
-    className?: string;
-}
+declare const VALID_STYLE_VALUES: readonly ["default", "pricebtn", "catbtn", "naked", undefined];
+declare type StyleValue = typeof VALID_STYLE_VALUES[number];
 
-export interface InputItemProps extends Omit<HTMLProps<HTMLDivElement>, 'className'>{
+export interface InputItemProps extends Omit<HTMLProps<HTMLInputElement>, 'className' | 'name' | 'value' | 'id'>{
     children: string;
-    disabled?: boolean;
-    checked?: boolean;
-    name?: string;
-    value?: string;
     className?: string;
-}
-
-export interface CheckListProps extends Omit<HTMLProps<HTMLDivElement>, 'className'>{
-    values: string[];
-    disabled?: boolean;
-    name?: string;
-    selectedIndex?: boolean[];
-    className?: string;
+    name: string;
+    styleType?: StyleValue;
 }

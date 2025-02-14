@@ -10,7 +10,7 @@ export const OfferCat =  forwardRef <HTMLDivElement, OfferCatProps> ((props, ref
     return (
         <div className={classNames(style.block,{[className]: className})} ref={ref}>
             <a className={style.frame} href={href}>
-                <img src={imageSrc} className={style.img}/>
+                <img src={imageSrc} className={style.img} alt={name}/>
                 <div className={style.info} > 
                     <div className={style.link}>
                         {`Перейти ${ collection ? 'к коллекции' : 'в категорию'}`}

@@ -4,6 +4,7 @@
     gap:10px;
     line-height: 1.4;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .radiocheck:hover, .radiocheck:has(input:focus){
@@ -13,13 +14,10 @@
 
 .radiocheck input {
     position:absolute;
-    opacity: 0;
+    opacity: 0 !important;
     pointer-events: none; 
 }
 
-.svg {
-    color: transparent;
-}
-.radiocheck:has(input:checked) .svg{
-    color: var(--accent);
+.radiocheck:has(input:checked) {
+    font-weight: 600;
 }

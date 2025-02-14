@@ -14,11 +14,11 @@ export const Offer =  forwardRef <HTMLAnchorElement, OfferProps> ((props, ref) =
 
     return (
         <a className={styleBlock} ref={ref} href={href}>
-            <img src={imageSrc} className={style.img}></img>
+            <img src={imageSrc} className={style.img} alt={name}></img>
             <div className={style.product} >
                 <div className={style.info}>
                     <div className={style.price}>{price}</div>
-                    {name && <div className={style.name}>{name}</div>}
+                    {accent && <div className={style.name}>{name}</div>}
                 </div>
                 <div className={style.link} >Перейти к товару</div>
             </div>

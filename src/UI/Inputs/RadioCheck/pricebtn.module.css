@@ -1,0 +1,40 @@
+.radiocheck {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    color: var(--accent);
+    background: var(--light);
+    padding: 20px 0;
+    border-radius: 12px;
+    border: 0.7px solid var(--accent);
+    outline: none;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: -webkit-background 0.3s -webkit-color 0.3s;
+    -o-transition: background 0.3s color 0.3s;
+    transition: background 0.3s, color 0.3s;
+}
+
+.price {
+    width: 129px;
+    padding: 20px 0;
+    font-size: 16px;
+    line-height: var(--number-h);
+}
+
+.cat {
+    padding: 15px 25px;
+    font-weight: 600;
+}
+
+.radiocheck input {
+    position:absolute;
+    opacity: 0;
+}
+
+.radiocheck:hover, .radiocheck:has(input:checked) {
+    color: var(--light);
+    background: var(--accent);
+}

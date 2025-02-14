@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 export interface OfferProps {
     price: string;
-    name?: string;
+    name: string;
     href: string;
     imageSrc: string;
     accent?: boolean;

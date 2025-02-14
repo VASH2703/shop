@@ -1,26 +1,17 @@
-import { BtnAnchor, Gallery, Hl1, Link, Offer, OfferCat } from "../UI";
-import { Romb, Map } from '../svg';
-import { MapProps } from "../data.types";
+import { BtnAnchor, Gallery, Hl1, Offer, OfferCat } from "../UI";
 import style from './main.module.css';
 import { AccentRow } from "../UI/Gallery/gallery";
-
-interface HeaderProps {
-    title: string;
-    nav: MapProps;
-    buttons: MapProps;
-    adress: string;
-}
+import { Category, Collection, Hits } from "../navigation";
 
 export const Main = () => {
     
     return (
-        <main>
+        <main className={style.main}>
             <Hl1>Коллекции</Hl1>
             <Gallery>
-                <OfferCat name='“MINIMAL”' imageSrc="collection1.png" href="/" collection/>
-                <OfferCat name='“NEW LOOK”' imageSrc="collection2.png" href="/" collection/>
-                <OfferCat name='“TREND”' imageSrc="collection3.png" href="/" collection/>
-                <OfferCat name='“CLOUDS”' imageSrc="collection4.png" href="/" collection/>
+                {Collection.map((item) => (
+                    <OfferCat name={item.name} key={item.name} imageSrc={item.imageSrc||''} href={item.href} collection/>
+                ))}
             </Gallery>
             <section className={style.slogan}>
                 <div className={style.description}>Украшения - это отличный способ подчеркнуть индивидуальность, стиль и творческий подход к моде</div>
@@ -29,22 +20,22 @@ export const Main = () => {
             </section>
             <Hl1>Хит продаж</Hl1>
             <Gallery className={style.hits}>
-                <Offer name='Кольцо из белого золота с бриллиантами' price='44 000 ₽' imageSrc="image1.png" href="/" accent/>
-                <Offer price='44 000 ₽' imageSrc="image.png" href="/"/>
-                <Offer price='44 000 ₽' imageSrc="image.png" href="/" />
+                { Hits.map ((item) => (
+                    <Offer name={item.name} price={item.price} imageSrc={item.imageSrc || ''} href={item.href} accent={item.accent}/>
+                ))}
                 <BtnAnchor href="/" className={style.toCat}>Перейти в каталог</BtnAnchor>
             </Gallery>
             <Hl1>Категории</Hl1>
             <Gallery column={3} gap='50px'>
-                <OfferCat name='Подвески' imageSrc="cat1.png" href="/"/>
-                <OfferCat name='Кольца' imageSrc="cat2.png" href="/"/>
-                <OfferCat name='Серьги' imageSrc="cat3.png" href="/"/>
-                <OfferCat name='Цепи' imageSrc="cat4.png" href="/"/>
-                <OfferCat name='Браслеты' imageSrc="cat5.png" href="/"/>
-                <OfferCat name='Пирсинг' imageSrc="cat6.png" href="/"/>
+                {Category.map((item) => (
+                    !item.accent && (
+                        <OfferCat name={item.name!} key={item.name!} imageSrc={item.imageSrc || ''} href={item.href} />
+                    )))}
                 <AccentRow oldColumn={3} newColumn={2} gap='50px'>
-                    <OfferCat name='Запонки' imageSrc="cat7.png" href="/"/>
-                    <OfferCat name='Броши' imageSrc="cat8.png" href="/"/>
+                    {Category.map((item) => (
+                        item.accent && (
+                            <OfferCat name={item.name!} key={item.name!} imageSrc={item.imageSrc || ''} href={item.href} />
+                    )))}
                 </AccentRow>
             </Gallery>
         </main>

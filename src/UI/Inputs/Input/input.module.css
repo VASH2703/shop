@@ -1,11 +1,11 @@
 .input {
+  display: block;
   line-height: 1.4;
   padding: 20px 30px;
   border-radius: 10px;
   border: 1px solid var(--basic);
-  /* width: 607px;  */
+  width: -webkit-fill-available;
   outline: none;
-  margin-bottom: 20px;
 }
 
 .error {

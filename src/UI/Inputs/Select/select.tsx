@@ -7,7 +7,7 @@ import { Arrow } from '../../../svg';
 
 const Select = forwardRef<HTMLDivElement, SelectProps> (( props, ref) => {
     
-    const { hint, disabled, values, name = hashId(), index, allowinput, className } = props;
+    const { hint, disabled, values, name = hashId(), index, allowinput, className='' } = props;
     const style = allowinput ? inselect : select; //select с поиском или без
 
     const [ value, setValue ] = useState<string>(index ? values[index] : (!hint ? values[0] : ''));
@@ -94,7 +94,7 @@ const Select = forwardRef<HTMLDivElement, SelectProps> (( props, ref) => {
                 
                 {visibleValues.map((item, itemIndex) => (
                     <div 
-                        className={`${style.option} ${itemIndex===selIndex ? style.sel : ''}`}
+                        className={itemIndex===selIndex ? style.sel : ''}
                         id={name+' '+itemIndex} 
                         onClick={!disabled&&visible ? () => handleClick(itemIndex) : undefined}
                         key={name+' '+itemIndex} 
@@ -107,5 +107,6 @@ const Select = forwardRef<HTMLDivElement, SelectProps> (( props, ref) => {
         </div>
     );
 });
+
 
 export default Select;

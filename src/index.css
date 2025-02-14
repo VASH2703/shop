@@ -35,8 +35,9 @@ body {
 }
 
 main {
-  margin-top:206px;
+  position: relative;
   padding:100px;
+  padding-top:206px;
 }
 
 img {
@@ -47,6 +48,13 @@ section {
   margin: 100px 0;
 }
 
-h1:not(:first-child) {
-  margin-top: 100px;
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 50px 0;
+}
+
+.prev {
+  color: rgba(0, 0, 0, 0.3) !important;
 }
