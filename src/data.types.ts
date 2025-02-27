@@ -14,6 +14,7 @@ export interface ProductItemProps extends MapItemProps{
     price: string;
     oldPrice?: string;
     rating?: number;
+    favorite?: boolean;
 }
 
 export type ProductListProps = ProductItemProps[];

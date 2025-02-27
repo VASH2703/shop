@@ -1,4 +1,4 @@
-import { Button, CheckBox, Gallery, Hl1, Link, Product, RadioItem, Select } from "../UI";
+import { Button, Gallery, Hl1, Link, Product, RadioItem } from "../UI";
 import hashId from "../hashId";
 import { Catalog, Category } from "../navigation";
 import { Arrow} from "../svg";
@@ -22,13 +22,6 @@ export const CatalogPage = () => {
                 ))}
             </div>
             <div className={style.filtersort}>
-                {/* <div className={style.filters}>
-                    <SelectCheck title='Материал' options={['Золото', 'Серебро','Титан','Медицинская сталь']}/>
-                    <div>Драгоценный камень</div>
-                </div>
-                <div>
-                    Сортировать по: цена по возрастанию
-                </div> */}
                 <div className={style.filters}>
                     <SelectCheck title='Материал' options={['Золото', 'Серебро','Титан','Медицинская сталь']}/>
                     <SelectCheck title='Драгоценный камень' options={['Бриллиант', 'Жемчуг','Фианит']}/>
@@ -46,6 +39,7 @@ export const CatalogPage = () => {
                         rating={item.rating}
                         href={item.href}
                         imageSrc={item.imageSrc}
+                        favorite={item.favorite}
                         key={hashId()}
                     />
                 ))}

@@ -2,12 +2,12 @@ import { forwardRef, useMemo } from 'react';
 import style from './product.module.css';
 import classNames from 'classnames';
 import { ProductProps } from './product.types';
-import { Heart } from '../../svg';
+import { Close, Heart } from '../../svg';
 import { Star } from '../../svg';
 import { Button } from '../Button';
 
 export const Product =  forwardRef <HTMLDivElement, ProductProps> ((props, ref) => {
-    const { name, price, oldPrice, href, imageSrc, rating=0, className=''} = props;
+    const { name, price, oldPrice, href, imageSrc, rating=0, favorite, className=''} = props;
 
     const drawRating = useMemo(() => {
         let res = [];
@@ -36,7 +36,11 @@ export const Product =  forwardRef <HTMLDivElement, ProductProps> ((props, ref) 
                 <a href={href} className={style.imgLink}>
                     <img src={imageSrc} className={style.img}/>
                 </a>
-                <button className={style.favorite}><Heart/></button>
+                <button className={style.favorite}>
+                    {favorite ? 
+                    <Close/> :
+                    <Heart/>}
+                </button>
             </div>
             {drawRating}
             <div>

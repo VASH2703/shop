@@ -5,5 +5,6 @@ export interface ProductProps {
     href: string;
     imageSrc?: string;
     rating?: number;
+    favorite?: boolean;
     className?: string;
 }
