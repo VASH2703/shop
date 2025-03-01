@@ -1,0 +1,126 @@
+.product {
+    margin-bottom: 100px;
+}
+
+.flex {
+    display: flex;
+    gap: 50px;
+    height: min-content;
+}
+
+.photos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 10%;
+}
+
+.photos.few {
+    justify-content: start;
+    gap:calc( (40% - 50px) / 4);
+}
+
+.photos * {
+    cursor: pointer;
+}
+
+.photos img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center; 
+}
+
+.sel {
+    flex: 1;
+    position: relative;
+}
+
+.img {
+    width: 100%;
+    mask-image: url('mask.svg');
+    aspect-ratio: 1 / 1;
+    object-fit: cover; /* Обрезать изображение, чтобы заполнить контейнер */
+    object-position: center; 
+    -webkit-transition: -webkit-filter 0.5s;
+    -o-transition: filter 0.5s;
+    transition: filter 0.5s;
+}
+
+.favorite {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:13.6%;
+    height:14.5%;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    color: var(--basic);
+}
+
+.info > * {
+    margin-top:30px;
+}
+
+.collection {
+    margin-top: 10px;
+    opacity: 0.5;
+}
+
+.prices {
+    display: flex;
+    gap:10px;
+}
+
+.oldPrice {
+    color: black;
+    opacity: 0.3;
+}
+
+.price, .oldPrice{
+    font-size: 20px;
+}
+
+.btn {
+    width: 345px;
+}
+
+.characteries {
+    margin-top: 50px;
+    line-height: 1.4;
+}
+    
+.same {
+    font-family: 'Moniqa';
+    margin-bottom: 50px !important;
+}
+
+.sameList {
+    position: relative;
+}
+
+.prev, .next {
+    position: absolute;
+    z-index: 1000;
+    top:calc(25% - 12px);
+    border-radius: 50%;
+    height: 80px;
+    width: 40px;
+}
+
+.prev:focus, .next:focus, .prev:hover, .next:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.prev {
+    left:0;
+}
+
+.next {
+    right:0;
+}

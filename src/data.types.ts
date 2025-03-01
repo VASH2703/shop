@@ -10,7 +10,7 @@ export interface MapItemProps {
 
 export type MapProps = MapItemProps[];
 
-export interface ProductItemProps extends MapItemProps{
+export interface ProductItemProps extends Omit<MapItemProps, 'icon'> {
     price: string;
     oldPrice?: string;
     rating?: number;
@@ -18,3 +18,15 @@ export interface ProductItemProps extends MapItemProps{
 }
 
 export type ProductListProps = ProductItemProps[];
+
+export interface Character {
+    [key: string]: string;
+}
+
+export interface FullProduct extends Omit<ProductItemProps, 'accent' | 'imageSrc'> {
+    images: string[];
+    characteries: Character[];
+    collection?: string;
+    material: string[];
+    gemstone: string[];
+}

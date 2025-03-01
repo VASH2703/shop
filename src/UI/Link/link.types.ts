@@ -10,3 +10,11 @@ export interface LinkProps extends Omit<HTMLProps<HTMLAnchorElement>, 'className
     icon?: boolean;
     className?: string;
 }
+
+export interface LinkBtnProps extends Omit<HTMLProps<HTMLButtonElement>, 'className'> {
+    children: ReactNode;
+    fontSize?: SizeValue;
+    fill?: boolean;
+    icon?: boolean;
+    className?: string;
+}

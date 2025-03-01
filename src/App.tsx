@@ -7,13 +7,14 @@ import { Sertificate } from './pages/sertificate';
 import { CatalogPage } from './pages/catalog';
 import { Contact } from './pages/contact';
 import { Favorite } from './pages/favorite';
+import { ProductPage } from './pages/product';
 
 function App() {
 
     return (
         <>
             <Header adress='Москва' title='CRYSTAL' buttons={Buttons} nav={Nav}/>
-            <Favorite/>
+            <ProductPage/>
             <Footer title='CRYSTAL' phoneLabel='+7 (900) 000-00-00' phoneHref='+79000000000' email='почта@mail.ru' map={MapPage} konfHref='/' date='CRYSTAL 2023'/>
         </> 
     )

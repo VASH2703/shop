@@ -1,5 +1,5 @@
 import { Heart, Search, Bag } from './svg';
-import type { MapItemProps, MapProps, ProductItemProps, ProductListProps } from './data.types';
+import type { FullProduct, MapItemProps, MapProps, ProductItemProps, ProductListProps } from './data.types';
 
 export const Buttons: MapProps = [
     {icon: <Search/>, name: 'Поиск', href: '/'} as MapItemProps,
@@ -51,4 +51,28 @@ export const Collection: MapProps = [
 ];
 
 export const MapPage: MapProps = [...Category, ...Nav];
+
+export const ProductExample: FullProduct = {
+    name: 'Серьги из белого золота с бриллиантами',
+    price: '399 996 ₽',
+    oldPrice: '999 990 ₽',
+    rating: 5,
+    collection:'White gold',
+    material: ['Белое золото 585'],
+    gemstone: [ 'Бриллианты', 'Аквамарины', 'Морганиты'],
+    characteries: [
+        {Проба: '750'},
+        {Масса: '7.70 г'},
+        {'Длинна изделия': '55 мм'},
+    ],
+    href: '/',
+    images: [
+        'prod1.png',
+        'prod2.png',
+        'prod3.png',
+        'prod4.png',
+        'prod5.png', 
+        'collection3.png',
+    ]
+}
 

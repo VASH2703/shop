@@ -1,6 +1,9 @@
 .link {
   text-decoration: none;
   color: var(--basic);
+  background: none;
+  border:none;
+  outline: none;
 }
 
 .link:hover, .link:focus {
