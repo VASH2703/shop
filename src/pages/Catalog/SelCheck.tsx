@@ -88,7 +88,6 @@ export const SelectCheck = forwardRef<HTMLDivElement, SelCheckProps> (( props, r
                 {options.map((item, itemIndex) => (
                     <CheckBox 
                         className={style.option}
-                        name={name}
                         key={name+' '+itemIndex}
                         styleType='naked'
                         checked={states[item]}

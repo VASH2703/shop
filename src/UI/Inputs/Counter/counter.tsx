@@ -6,7 +6,7 @@ import { CounterProps } from './counter.types';
 const Counter = forwardRef<HTMLDivElement, CounterProps> ((props, ref ) => {
     const {min=0, max, step=1, input, className=''} = props;
 
-    const [value, setValue] = useState<number>(0);
+    const [value, setValue] = useState<number>(min);
 
     const inc = () => {
         const newValue = value+step;

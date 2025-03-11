@@ -1,15 +1,18 @@
-import { forwardRef } from 'react';
-import style from './product.module.css';
+import { forwardRef, useState } from 'react';
+import product from './product.module.css';
+import productcart from './productcart.module.css';
 import classNames from 'classnames';
-import { ProductProps } from './product.types';
+import { ProductProps, ProductCartProps } from './product.types';
 import { Close, Heart } from '../../svg';
 import { Button } from '../Button';
+import { CheckBox, Counter } from '../Inputs';
 import Rating from './rating';
+import { formatString } from '../../composition';
 
 
 export const Product =  forwardRef <HTMLDivElement, ProductProps> ((props, ref) => {
     const { name, price, oldPrice, href, imageSrc, rating=0, favorite, className=''} = props;
-
+    const style = product;
     return (
         <div className={classNames(style.block,{[className]: className})} ref={ref}>
             <div className={style.frame}>
@@ -29,6 +32,51 @@ export const Product =  forwardRef <HTMLDivElement, ProductProps> ((props, ref) 
             </div>
             <a className={style.name} href={href}>{name}</a>
             <Button full>Добавить в корзину</Button>
+        </div>
+    );
+})
+
+export const ProductCart =  forwardRef <HTMLDivElement, ProductCartProps> ((props, ref) => {
+    const { name, price, oldPrice, href, imageSrc, favorite=false, material, gemstone, className=''} = props;
+    const style = productcart;
+
+    const [fav, setFav] = useState<boolean>(favorite);
+
+    const handleClick = () => {
+        setFav(prev => !prev);
+    }
+
+    return (
+        <div className={classNames(style.block,{[className]: className})} ref={ref}>
+            <div className={style.left}>
+                <CheckBox styleType='icon'>{name}</CheckBox>
+                <a href={href} className={style.imgLink}>
+                    <img src={imageSrc} className={style.img}/>
+                </a>
+                <div className={style.info} >
+                    <a className={style.name} href={href}>{name}</a>
+                    <div>{formatString(gemstone)}</div>
+                    <div>{formatString(material)}</div>
+                </div>
+            </div>
+            <div className={style.right}>
+                <div className={style.buttons}>
+                    <Counter className={style.btn} min={1}/>
+                    <Button styleType="close" className={style.iconBtn}>
+                        <Close width={14} height={14}/>
+                    </Button>
+                    <button 
+                        className={`${style.iconBtn} ${style.heart} ${fav ? style.favorite : ''}`}
+                        onClick = {handleClick}
+                    >
+                        <Heart width={23} height={20}/>
+                    </button>
+                </div>
+                <div className={style.buttons}>
+                    <div className={style.oldPrice}>{oldPrice}</div>
+                    <div className={style.price}>{price}</div>
+                </div>
+            </div>
         </div>
     );
 })

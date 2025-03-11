@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { InputItemProps } from "./radio.types";
+import { RadioProps, CheckProps } from "./radio.types";
 
 import { Radio, Check } from "../../../svg";
 
@@ -12,11 +12,12 @@ const styleMap = {
     default: def,
     pricebtn: btn,
     catbtn: btn,
-    naked: naked
+    naked: naked,
+    icon: def
 };
 
-export const RadioItem = forwardRef<HTMLLabelElement,InputItemProps> ((props, ref) => {
-    const {children, className = '', name, styleType = "default", ...also} = props;
+export const RadioItem = forwardRef<HTMLLabelElement,RadioProps> ((props, ref) => {
+    const {children, className = '', name, value, styleType = "default", ...also} = props;
 
     const style = styleMap[styleType];
 
@@ -32,18 +33,18 @@ export const RadioItem = forwardRef<HTMLLabelElement,InputItemProps> ((props, re
             <input
                 {...also} 
                 type="radio"
-                value={children}
                 name={name}
+                value={value || children}
                 id={children}
             />
-            {styleType === "default" && <Radio className={style.svg} />}
-            <span>{children}</span>
+            {(styleType === "default" || styleType === "icon") && <Radio className={style.svg} />}
+            {styleType != "icon" && <span>{children}</span>}
         </label>
     );
 });
 
-export const CheckBox = forwardRef<HTMLLabelElement,InputItemProps> ((props, ref) => {
-    const {children, className = '', name, styleType = "default", ...also} = props;
+export const CheckBox = forwardRef<HTMLLabelElement,CheckProps> ((props, ref) => {
+    const {children, className = '', value, styleType = "default", ...also} = props;
 
     const style = styleMap[styleType];
 
@@ -60,12 +61,12 @@ export const CheckBox = forwardRef<HTMLLabelElement,InputItemProps> ((props, ref
             <input
                 {...also} 
                 type="checkbox"
-                name={name}
-                value={children}
+                name={children}
+                value={value || value}
                 id={children}
             />
-            {styleType === "default" && <Check className={style.svg} />}
-            <span>{children}</span>
+            {(styleType === "default" || styleType === "icon") && <Check className={style.svg} />}
+            {styleType != "icon" && <span>{children}</span> }
         </label>  
     );
 });

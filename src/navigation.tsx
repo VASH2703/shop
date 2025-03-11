@@ -54,8 +54,8 @@ export const MapPage: MapProps = [...Category, ...Nav];
 
 export const ProductExample: FullProduct = {
     name: 'Серьги из белого золота с бриллиантами',
-    price: '399 996 ₽',
-    oldPrice: '999 990 ₽',
+    price: '399 996 ₽',
+    oldPrice: '999 990 ₽',
     rating: 5,
     collection:'White gold',
     material: ['Белое золото 585'],

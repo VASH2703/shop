@@ -4,6 +4,7 @@ import hashId from "../hashId";
 import { Catalog, ProductExample } from "../navigation";
 import { Arrow, Heart, Close} from "../svg";
 import style from './product.module.css'
+import { formatString } from "../composition";
 
 export const ProductPage = () => {
     const product = ProductExample; //сделать запрос из базы данных
@@ -11,15 +12,6 @@ export const ProductPage = () => {
     const count = useMemo(() => (product.images.length >= 5 ? 5 : product.images.length), [product.images.length]);
     const [ selectPhoto, setSelectPhoto ] = useState<number>(0);
     const [ headPhoto, setHeadPhoto ] = useState<number>(0);
-
-    const formatString = (arr: string[]): string => {
-        if (!arr || arr.length === 0) {
-          return '';
-        }
-        const joinedString = arr.join(', '); 
-        const formattedString = joinedString.charAt(0).toUpperCase() + joinedString.slice(1).toLowerCase();
-        return formattedString;
-    };
 
     const handlePhotoClick = (e: MouseEvent) => {
         const index = +e.currentTarget.id;

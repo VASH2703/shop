@@ -58,3 +58,7 @@ section {
 .prev {
   color: rgba(0, 0, 0, 0.3) !important;
 }
+
+.full {
+  width: 100% !important;
+}

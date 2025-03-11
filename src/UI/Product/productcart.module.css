@@ -1,0 +1,99 @@
+.block {
+    display: flex;
+    justify-content: space-between;
+    height: 160px;
+    width: 100%;
+    border-top: 1px solid var(--basic);
+    border-bottom: 1px solid var(--basic);
+    padding: 30px 0;
+    box-sizing: border-box;
+}
+
+.block + .block {
+    border-top: none;
+}
+
+.left {
+    display: flex;
+    gap: 20px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.imgLink {
+    outline: none;
+}
+
+.imgLink:focus .img, .imgLink:hover .img {
+    filter: brightness(0.9);
+}
+
+.img {
+    max-height: 100%;
+    width: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover; /* Обрезать изображение, чтобы заполнить контейнер */
+    object-position: center; 
+    -webkit-transition: -webkit-filter 0.5s;
+    -o-transition: filter 0.5s;
+    transition: filter 0.5s;
+}
+
+.oldPrice {
+    color: black;
+    opacity: 0.3;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.price {
+    font-size: 24px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.info {
+    display: grid;
+    gap: 10px;
+    line-height: 1.4;
+}
+
+.name {
+    font-size: 20px;
+    line-height: 1;
+    color: var(--basic);
+    text-decoration: none;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    height: 43px;  
+}
+
+.iconBtn {
+    height: 43px;
+    width: 43px;
+    background: white;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.heart:hover, .heart:focus {
+    color: var(--accent);
+    --stroke-width: 2px;
+}
+
+.favorite {
+    --heart-fill: var(--accent);
+}
