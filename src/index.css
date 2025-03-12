@@ -62,3 +62,9 @@ section {
 .full {
   width: 100% !important;
 }
+
+.hr {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+}

@@ -2,9 +2,10 @@
   display: block;
   line-height: 1.4;
   padding: 20px 30px;
+  box-sizing: border-box;
   border-radius: 10px;
   border: 1px solid var(--basic);
-  width: -webkit-fill-available;
+  width: 100%;
   outline: none;
 }
 

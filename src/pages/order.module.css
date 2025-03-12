@@ -1,0 +1,44 @@
+.content {
+    display: flex;
+    align-items: flex-start;
+    gap: 10%;
+}
+
+.form {
+    flex: 1;
+}
+
+.content h4 {
+    margin-bottom: 30px;
+}
+
+.content h4:not(:first-child) {
+    margin-top: 50px;
+}
+
+.delivery {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10%;
+    margin-bottom: 30px;
+}
+
+.section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+    column-gap: 10%;
+}
+
+.payment {
+    margin: 30px 0;
+    display: grid;
+    gap: 20px;
+}
+
+.note {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-top: 20px;
+}

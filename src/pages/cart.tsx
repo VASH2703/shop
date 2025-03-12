@@ -2,6 +2,7 @@ import { useMemo, useState, ChangeEvent } from 'react';
 import { Button, Hl1, Link, BtnAnchor, CheckBox, ProductCart, LinkBtn} from "../UI";
 import style from './cart.module.css';
 import { ProductExample } from "../navigation";
+import Cheque from './Catalog/cheque';
 
 export const Cart = () => {
     const items = [ProductExample, ProductExample, ProductExample];
@@ -16,15 +17,14 @@ export const Cart = () => {
     const count = useMemo(() => items.length, [items]);
 
     const fullSum = useMemo(() => {
-        const res = items.reduce((total, item) => {
+        return items.reduce((total, item) => {
             const fullPrice = cleanPrice(item.oldPrice || item.price);
             return total + fullPrice;
         }, 0);
-        return res.toLocaleString('ru-RU')+" ₽";
     },[items]);
 
     const discount = useMemo(() => {
-        const res = items.reduce((total, item) => {
+        return items.reduce((total, item) => {
             if (item.oldPrice) {
                 const oldPrice = cleanPrice(item.oldPrice);
                 const price = cleanPrice(item.price);
@@ -32,15 +32,13 @@ export const Cart = () => {
             }
             return total;
         }, 0);
-        return res.toLocaleString('ru-RU')+" ₽";
     },[items]);
 
     const resSum = useMemo(() => {
-        const res = items.reduce((total, item) => {
+        return items.reduce((total, item) => {
             const price = cleanPrice(item.price);
             return total + price;
         }, 0);
-        return res.toLocaleString('ru-RU')+" ₽";
     },[items]);
 
     const allSelect = (event: ChangeEvent<HTMLInputElement>) => {
@@ -94,25 +92,13 @@ export const Cart = () => {
                         </div>
                         <LinkBtn fontSize='XS'>Очистить корзину</LinkBtn>
                     </div>
-                    <div className={style.sum}>
-                        <div>
-                            <div className={style.row}>
-                                <label>Сумма без учета скидки ({count} шт)</label>
-                                <span>{fullSum}</span>
-                            </div>
-                            <div className={style.row}>
-                                <label>Скидка</label>
-                                <span>{discount}</span>
-                            </div>
-                        </div>
-                        <div className={style.hr}/>
-                        <div className={`${style.row} ${style.result}`}>
-                            <label>ИТОГО</label>
-                            <span>{resSum}</span>
-                        </div>
-                        <Button className="full">Оформить заказ</Button>
-                    </div>
-                    
+                    <Cheque 
+                        fullsum={fullSum}
+                        discount={discount}
+                        sum={resSum}
+                        count={count}
+                        buttons={[{name: 'Оформить заказ'}]}
+                    />
                 </div>
             )}
         </main>

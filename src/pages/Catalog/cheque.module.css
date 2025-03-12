@@ -1,0 +1,32 @@
+.block {
+    display: grid;
+    width: 30%;
+    background: white;    
+    gap: 30px;
+    border-radius: 10px;
+    padding: 30px;
+    line-height: 1.4;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row + .row {
+    margin-top: 10px;
+}
+
+.row span {
+    white-space: nowrap;
+}
+
+.result {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.buttons {
+    display: grid;
+    gap: 20px;
+}
