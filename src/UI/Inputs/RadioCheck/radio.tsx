@@ -44,7 +44,7 @@ export const RadioItem = forwardRef<HTMLLabelElement,RadioProps> ((props, ref) =
 });
 
 export const CheckBox = forwardRef<HTMLLabelElement,CheckProps> ((props, ref) => {
-    const {children, className = '', value, styleType = "default", ...also} = props;
+    const {children, className = '', styleType = "default", ...also} = props;
 
     const style = styleMap[styleType];
 
@@ -62,7 +62,6 @@ export const CheckBox = forwardRef<HTMLLabelElement,CheckProps> ((props, ref) =>
                 {...also} 
                 type="checkbox"
                 name={children}
-                value={value || value}
                 id={children}
             />
             {(styleType === "default" || styleType === "icon") && <Check className={style.svg} />}

@@ -37,7 +37,7 @@ export const Product =  forwardRef <HTMLDivElement, ProductProps> ((props, ref) 
 })
 
 export const ProductCart =  forwardRef <HTMLDivElement, ProductCartProps> ((props, ref) => {
-    const { name, price, oldPrice, href, imageSrc, favorite=false, material, gemstone, className=''} = props;
+    const { name, price, oldPrice, href, imageSrc, favorite=false, onChange, index, select, material, gemstone, className=''} = props;
     const style = productcart;
 
     const [fav, setFav] = useState<boolean>(favorite);
@@ -49,7 +49,7 @@ export const ProductCart =  forwardRef <HTMLDivElement, ProductCartProps> ((prop
     return (
         <div className={classNames(style.block,{[className]: className})} ref={ref}>
             <div className={style.left}>
-                <CheckBox styleType='icon'>{name}</CheckBox>
+                <CheckBox styleType='icon' value={index} checked={select} onChange={onChange}>{name}</CheckBox>
                 <a href={href} className={style.imgLink}>
                     <img src={imageSrc} className={style.img}/>
                 </a>

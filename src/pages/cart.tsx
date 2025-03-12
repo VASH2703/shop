@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, ChangeEvent } from 'react';
 import { Button, Hl1, Link, BtnAnchor, CheckBox, ProductCart, LinkBtn} from "../UI";
 import style from './cart.module.css';
 import { ProductExample } from "../navigation";
@@ -6,6 +6,7 @@ import { ProductExample } from "../navigation";
 export const Cart = () => {
     const items = [ProductExample, ProductExample, ProductExample];
     const [empty, setEmpry] = useState<boolean>(false);
+    const [select, setSelect] = useState<boolean[]>(Array(items.length).fill(false));
 
     const cleanPrice = (price: string): number => {
         const cleanedPrice = price.replace(/[^\d]/g, '');
@@ -42,6 +43,18 @@ export const Cart = () => {
         return res.toLocaleString('ru-RU')+" ₽";
     },[items]);
 
+    const allSelect = (event: ChangeEvent<HTMLInputElement>) => {
+        setSelect(Array(select.length).fill(event.target.checked));
+    }
+
+    const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const index = parseInt(event.target.value);
+        console.log(event.target.value);
+        setSelect(prev =>
+            prev.map((item, i) => (i === index ? event.target.checked : item))
+        );
+    }
+
 
     return (
         <main>
@@ -59,11 +72,11 @@ export const Cart = () => {
                 (<div className={style.content}>
                     <div className={style.items}>
                         <div className={style.row}>
-                            <CheckBox>Выбрать всё</CheckBox>
+                            <CheckBox onChange={allSelect}>Выбрать всё</CheckBox>
                             <LinkBtn fontSize='XS'>Удалить выбранное</LinkBtn>
                         </div>
                         <div className={style.list}>
-                            {items.map((item) => (
+                            {items.map((item,index) => (
                                 <ProductCart
                                     name={item.name}
                                     href={item.href}
@@ -73,6 +86,9 @@ export const Cart = () => {
                                     gemstone={item.gemstone}
                                     material={item.material}
                                     favorite={item.favorite}
+                                    select={select[index]}
+                                    index={index}
+                                    onChange={onChange}
                                 />
                             ))}
                         </div>
@@ -81,17 +97,17 @@ export const Cart = () => {
                     <div className={style.sum}>
                         <div>
                             <div className={style.row}>
-                                <span>Сумма без учета скидки ({count} шт)</span>
+                                <label>Сумма без учета скидки ({count} шт)</label>
                                 <span>{fullSum}</span>
                             </div>
                             <div className={style.row}>
-                                <span>Скидка</span>
+                                <label>Скидка</label>
                                 <span>{discount}</span>
                             </div>
                         </div>
                         <div className={style.hr}/>
                         <div className={`${style.row} ${style.result}`}>
-                            <span>ИТОГО</span>
+                            <label>ИТОГО</label>
                             <span>{resSum}</span>
                         </div>
                         <Button className="full">Оформить заказ</Button>
