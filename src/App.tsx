@@ -10,13 +10,14 @@ import { Favorite } from './pages/favorite';
 import { ProductPage } from './pages/product';
 import { Cart } from './pages/cart';
 import { Order } from './pages/order';
+import { CheckOrder } from './pages/checkorder';
 
 function App() {
 
     return (
         <>
             <Header adress='Москва' title='CRYSTAL' buttons={Buttons} nav={Nav}/>
-            <Order/>
+            <CheckOrder/>
             <Footer title='CRYSTAL' phoneLabel='+7 (900) 000-00-00' phoneHref='+79000000000' email='почта@mail.ru' map={MapPage} konfHref='/' date='CRYSTAL 2023'/>
         </> 
     )

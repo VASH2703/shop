@@ -9,3 +9,5 @@ export { Check } from './check';
 export { LongArrow } from './longarrow';
 export { Star } from './star';
 export { Romb } from './romb';
+export { Status } from './status';
+export { Delivery } from './delivery';
