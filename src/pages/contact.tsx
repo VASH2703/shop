@@ -1,4 +1,4 @@
-import { Button, Hl1,  Hl3, Input, Link, TextArea, Title6 } from "../UI";
+import { Button, Hl1,  Hl3, Input, TextArea, Title6 } from "../UI";
 import style from './contact.module.css';
 
 export const Contact = () => {

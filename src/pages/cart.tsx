@@ -1,5 +1,5 @@
 import { useMemo, useState, ChangeEvent } from 'react';
-import { Hl1, Link, BtnAnchor, CheckBox, ProductCart, LinkBtn} from "../UI";
+import { Hl1, BtnAnchor, CheckBox, ProductCart, LinkBtn} from "../UI";
 import style from './cart.module.css';
 import { ProductExample } from "../navigation";
 import Cheque from './Catalog/cheque';
@@ -59,7 +59,7 @@ export const Cart = () => {
             {empty ? 
                 (<div className={style.empty}>
                     <div>Вы еще ничего не добавили. Посмотрите понравившийся вам товар из каталога</div>
-                    <BtnAnchor className={style.toCatalog} href="/">Перейти в каталог</BtnAnchor>
+                    <BtnAnchor className={style.toCatalog} href="/catalog">Перейти в каталог</BtnAnchor>
                 </div>) :
                 (<div className={style.content}>
                     <div className={style.items}>
@@ -91,7 +91,7 @@ export const Cart = () => {
                         discount={discount}
                         sum={resSum}
                         count={count}
-                        buttons={[{name: 'Оформить заказ'}]}
+                        buttons={[{name: 'Оформить заказ', href: '/order'}]}
                     />
                 </div>
             )}

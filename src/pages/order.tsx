@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from 'react';
-import { Hl1,  Hl4,  Input, Link, RadioItem, Select} from "../UI";
+import { Hl1,  Hl4,  Input, RadioItem, Select} from "../UI";
 import Cheque from "./Catalog/cheque";
 import style from './order.module.css';
 
@@ -50,12 +50,12 @@ export const Order = () => {
                     <div className='hr'/>
                     <div className={style.note}>Поля отмеченные звездочкой, обязательные для заполнения </div>
                 </div>
-                <Cheque
+                <Cheque /*  заправшиваем информацтю и по корзине */
                     fullsum={999990}
                     discount={599994}
                     count={2}
                     sum={399996}
-                    buttons={[{name: 'Заказать'}, {name: 'Вернуться в корзину'},]}
+                    buttons={[{name: 'Заказать'}, {name: 'Вернуться в корзину', href: '/cart'},]}  //Заказать - отправляем запрос 
                 />
             </div>
         </main>

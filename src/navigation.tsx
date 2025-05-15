@@ -57,6 +57,17 @@ export const Sort: Record<string, string>  = {
     'pricedec': 'цена по убыванию'
 }; 
 
+export const Topic: Record<string, string>  = {
+    '': 'Главная',
+    'contact': 'Контакты',
+    'catalog': 'Каталог',
+    'sertificate': 'Cертификаты',
+    'checkorder': 'Статус заказа',
+    'favorite':'Извбранное',
+    'cart': 'Корзина',
+    'order': 'Оформление заказа'
+}
+
 export const CatalogExample: ProductListProps = [
     {id:'01', name: 'Подвеска из белого золота и серебра',  material: ['gold', 'silver'],
         gemstone: [], category: 'pendant', oldPrice: '60 000 ₽', price: '44 000 ₽', href: '/catalog/01', rating: 4.4, images: ['/image1.png']},

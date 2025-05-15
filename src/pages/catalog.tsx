@@ -4,7 +4,7 @@ import { useSearchParams} from 'react-router-dom';
 import { ProductItemProps } from '../data.types';
 import { Catalog, Category, Gemstone, MaterialsSearch, Sort } from "../navigation";
 
-import { Button, Gallery, Hl1, Link, Product, RadioItem } from "../UI";
+import { Button, Gallery, Hl1, Product, RadioItem } from "../UI";
 import { SelectCheck, SelectRadio } from "./Catalog/SelCheck";
 import { Arrow} from "../svg";
 

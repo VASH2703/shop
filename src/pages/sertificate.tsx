@@ -1,4 +1,4 @@
-import { Button, Hl1,  Hl5, Link, RadioItem, Title1, Title3 } from "../UI";
+import { Button, Hl1,  Hl5, RadioItem, Title1, Title3 } from "../UI";
 import style from './sertificate.module.css';
 import hashId from "../hashId";
 

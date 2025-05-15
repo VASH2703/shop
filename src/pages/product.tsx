@@ -1,7 +1,7 @@
 import { useState, MouseEvent, useMemo } from "react";
 import { useParams } from 'react-router-dom';
 
-import { Button, Counter, Gallery, Product, Title3, Title6, Link, LinkBtn, Rating, Hl3 } from "../UI";
+import { Button, Counter, Gallery, Product, Title3, Title6, LinkBtn, Rating, Hl3 } from "../UI";
 import hashId from "../hashId";
 import { Catalog, ProductExample } from "../navigation";
 import { Arrow, Heart, Close} from "../svg";

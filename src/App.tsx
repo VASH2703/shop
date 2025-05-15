@@ -1,8 +1,11 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { Footer } from './Footer';
-import { MapPage, Nav, Buttons } from './navigation';
+import Breadcrumbs from './breadcrumbs';
 import { Header } from './Header/header';
+
+import { MapPage, Nav, Buttons } from './navigation';
+
 import { Main } from './pages/main';
 import { Sertificate } from './pages/sertificate';
 import { CatalogPage } from './pages/catalog';
@@ -12,20 +15,15 @@ import { ProductPage } from './pages/product';
 import { Cart } from './pages/cart';
 import { Order } from './pages/order';
 import { CheckOrder } from './pages/checkorder';
-import { Link } from './UI';
 
 function App() {
 
     return (
         <Router>
             <Header adress='Москва' title='CRYSTAL' buttons={Buttons} nav={Nav}/>
-            {location.pathname !== '/' && <div className='nav'>
-                <Link fontSize="XS" href='/' className='prev'>Главная</Link>
-                /
-                <Link fontSize="XS" href='/' className='prev'>Каталог</Link>
-                /
-                <Link fontSize="XS" href='/'>страница</Link>
-            </div>}
+            {location.pathname !== '/' && 
+                <Breadcrumbs/>
+            }
             <Routes>
                 <Route path="/" element={<Main />} /> {/* Главная страница */}
                 <Route path="/sertificate" element={<Sertificate />} />

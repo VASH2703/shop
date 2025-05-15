@@ -17,7 +17,7 @@ export const Favorite = () => {
             {empty ?
                 (<div className={style.empty}>
                     <div>Вы еще ничего не добавили. Посмотрите понравившийся вам товар из каталога</div>
-                    <BtnAnchor className={style.toCatalog} href="/">Перейти в каталог</BtnAnchor>
+                    <BtnAnchor className={style.toCatalog} href="/catalog">Перейти в каталог</BtnAnchor>
                 </div>) :
                 (<div>
                     <Gallery gap='50px' className={style.favorites}>

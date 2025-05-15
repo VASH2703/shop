@@ -23,7 +23,7 @@ export const Main = () => {
                 { Hits.map ((item) => (
                     <Offer name={item.name} price={item.price} imageSrc={item.images[0] || ''} href={item.href} accent={item.accent}/>
                 ))}
-                <BtnAnchor href="/" className={style.toCat}>Перейти в каталог</BtnAnchor>
+                <BtnAnchor href="/catalog" className={style.toCat}>Перейти в каталог</BtnAnchor>
             </Gallery>
             <Hl1>Категории</Hl1>
             <Gallery column={3} gap='50px'>
