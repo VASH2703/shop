@@ -1,5 +1,3 @@
-import hashId from "../hashId";
-
 interface StarProps {
     width?: number;
     height?: number;

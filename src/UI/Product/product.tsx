@@ -10,14 +10,14 @@ import Rating from './rating';
 import { formatString } from '../../composition';
 
 
-export const Product =  forwardRef <HTMLDivElement, ProductProps> ((props, ref) => {
-    const { name, price, oldPrice, href, imageSrc, rating=0, favorite, className=''} = props;
+export const Product =  forwardRef <HTMLDivElement, Omit<ProductProps, 'id' | 'material' | 'category' | 'gemstone'>> ((props, ref) => {
+    const { name, price, oldPrice, href, images, rating=0, favorite, className=''} = props;
     const style = product;
     return (
         <div className={classNames(style.block,{[className]: className})} ref={ref}>
             <div className={style.frame}>
                 <a href={href} className={style.imgLink}>
-                    <img src={imageSrc} className={style.img}/>
+                    <img src={images[0]} className={style.img}/>
                 </a>
                 <button className={style.favorite}>
                     {favorite ? 

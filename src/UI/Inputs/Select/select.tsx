@@ -35,7 +35,7 @@ const Select = forwardRef<HTMLDivElement, SelectProps> (( props, ref) => {
         setValue(event.target.value);
         const newSet = values.filter((item) => item.toLowerCase().includes(lowValue));
         setVisibleValues(newSet);
-    },[]);
+    },[values]);
 
     const handleKeyDown = useCallback((event: KeyboardEvent<HTMLInputElement>) => { //переключение через клавиатуру
         if (event.key === 'ArrowUp') {
@@ -45,7 +45,7 @@ const Select = forwardRef<HTMLDivElement, SelectProps> (( props, ref) => {
         } else if (event.key === 'Enter') {
             handleClick(selIndex);
         }
-    },[visibleValues]);
+    },[visibleValues,handleClick,selIndex]);
 
     const handleOutsideClick = useCallback((event: MouseEvent | TouchEvent | FocusEvent) => { //потеря фокуса
         if (refList.current && 
@@ -54,7 +54,7 @@ const Select = forwardRef<HTMLDivElement, SelectProps> (( props, ref) => {
             event.target !== refInput.current) { //проверяет поле
             handleClick(allowinput ? 0 : undefined);
         }
-    },[refList, refInput]);
+    },[refList, refInput, allowinput, handleClick]);
 
     useEffect(() => { //Listenerы для обработки потери фокуса (мышь, клавиатура, сенсор)
         const mouseDownListener = (event: MouseEvent) => handleOutsideClick(event);

@@ -17,14 +17,13 @@ const Counter = forwardRef<HTMLDivElement, CounterProps> ((props, ref ) => {
 
     const dec = () => {
         const newValue = value-step;
-        console.log(min);
         if (newValue>=min) {
             setValue(newValue);
         }
     }
 
     const hundleChange = (event: ChangeEvent<HTMLInputElement>) => {
-        let newValue = parseInt(event.target.value);
+        const newValue = parseInt(event.target.value);
         if (isNaN(newValue)) {
             setValue(min);
         }
@@ -32,6 +31,7 @@ const Counter = forwardRef<HTMLDivElement, CounterProps> ((props, ref ) => {
             setValue(newValue);
         }
     }
+
     const stylesInput = classNames (
         style.input,
         {[className]: className}

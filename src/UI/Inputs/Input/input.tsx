@@ -9,7 +9,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps> ((props, ref ) => 
     const stylesInput = classNames (
         style.input,
         className,
-        {[style.error]: props.error}
+        {[style.error]: error}
     )
     return (
         <input
@@ -27,7 +27,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps> ((props, 
     const stylesInput = classNames (
         style.input,
         className,
-        {[style.error]: props.error}
+        {[style.error]: error}
     )
     return (
         <textarea

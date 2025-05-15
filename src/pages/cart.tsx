@@ -1,12 +1,12 @@
 import { useMemo, useState, ChangeEvent } from 'react';
-import { Button, Hl1, Link, BtnAnchor, CheckBox, ProductCart, LinkBtn} from "../UI";
+import { Hl1, Link, BtnAnchor, CheckBox, ProductCart, LinkBtn} from "../UI";
 import style from './cart.module.css';
 import { ProductExample } from "../navigation";
 import Cheque from './Catalog/cheque';
 
 export const Cart = () => {
-    const items = [ProductExample, ProductExample, ProductExample];
-    const [empty, setEmpry] = useState<boolean>(false);
+    const items = useMemo(() => [ProductExample, ProductExample, ProductExample], []); //запрос из базы данных
+    const empty = false; //проверка на пуское значение
     const [select, setSelect] = useState<boolean[]>(Array(items.length).fill(false));
 
     const cleanPrice = (price: string): number => {
@@ -47,7 +47,6 @@ export const Cart = () => {
 
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
         const index = parseInt(event.target.value);
-        console.log(event.target.value);
         setSelect(prev =>
             prev.map((item, i) => (i === index ? event.target.checked : item))
         );
@@ -56,11 +55,6 @@ export const Cart = () => {
 
     return (
         <main>
-            <div className='nav'>
-                <Link fontSize="XS" href='/' className='prev'>Главная</Link>
-                /
-                <Link fontSize="XS" href='/'>Корзина</Link>
-            </div>
             <Hl1>Корзина</Hl1>
             {empty ? 
                 (<div className={style.empty}>

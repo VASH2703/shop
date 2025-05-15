@@ -13,7 +13,7 @@
 .background, .map iframe {
     height: 100%;
     width: 100%;
-    mask-image: url('mapfigure.svg');
+    mask-image: url('/mapfigure.svg');
     mask-size: 100% 100%;
     mask-repeat: no-repeat; 
 }

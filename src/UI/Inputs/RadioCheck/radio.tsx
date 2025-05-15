@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, useMemo  } from "react";
 import { RadioProps, CheckProps } from "./radio.types";
 
 import { Radio, Check } from "../../../svg";
@@ -17,8 +17,8 @@ const styleMap = {
 };
 
 export const RadioItem = forwardRef<HTMLLabelElement,RadioProps> ((props, ref) => {
-    const {children, className = '', name, value, styleType = "default", ...also} = props;
-
+    const {children, className = '', name, value: propValue, styleType = "default", ...also} = props;
+    const value = useMemo(() => propValue || children, [propValue, children]);
     const style = styleMap[styleType];
 
     const labelClasses = classNames(
@@ -29,12 +29,12 @@ export const RadioItem = forwardRef<HTMLLabelElement,RadioProps> ((props, ref) =
     )
 
     return (
-        <label ref={ref} className={labelClasses} aria-labelledby={children}>
+        <label ref={ref} className={labelClasses} aria-labelledby={value}>
             <input
                 {...also} 
                 type="radio"
                 name={name}
-                value={value || children}
+                value={value}
                 id={children}
             />
             {(styleType === "default" || styleType === "icon") && <Radio className={style.svg} />}

@@ -3,19 +3,13 @@ import style from './favorite.module.css';
 import { Arrow} from "../svg";
 import hashId from "../hashId";
 import { Catalog } from "../navigation";
-import { useState } from 'react';
 
 export const Favorite = () => {
-    const favorites = Catalog;
-    const [empty, setEmpry] = useState<boolean>(true);
+    const favorites = Catalog; //запрос избранного
+    const empty = true; //проверка на пустой массив
 
     return (
         <main>
-            <div className='nav'>
-                <Link fontSize="XS" href='/' className='prev'>Главная</Link>
-                /
-                <Link fontSize="XS" href='/'>Избранное</Link>
-            </div>
             <div className={style.title}>
                 <Hl1>Избранное</Hl1>
                 {!empty && (<Link className={style.del}>Удалить всё</Link>)}
@@ -34,7 +28,7 @@ export const Favorite = () => {
                                 price={item.price}
                                 rating={item.rating}
                                 href={item.href}
-                                imageSrc={item.imageSrc}
+                                images={item.images}
                                 favorite={true} //
                                 key={hashId()}
                             />

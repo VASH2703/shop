@@ -1,4 +1,6 @@
 import { useState, MouseEvent, useMemo } from "react";
+import { useParams } from 'react-router-dom';
+
 import { Button, Counter, Gallery, Product, Title3, Title6, Link, LinkBtn, Rating, Hl3 } from "../UI";
 import hashId from "../hashId";
 import { Catalog, ProductExample } from "../navigation";
@@ -7,7 +9,11 @@ import style from './product.module.css'
 import { formatString } from "../composition";
 
 export const ProductPage = () => {
-    const product = ProductExample; //сделать запрос из базы данных
+    const { productId } = useParams();
+
+    const product = Catalog.find(item => item.id === productId) || ProductExample;
+
+    //const product = ProductExample; //сделать запрос из базы данных
     
     const count = useMemo(() => (product.images.length >= 5 ? 5 : product.images.length), [product.images.length]);
     const [ selectPhoto, setSelectPhoto ] = useState<number>(0);
@@ -31,7 +37,7 @@ export const ProductPage = () => {
     const getVisibleIndices = (head: number, max: number) => {
         const visibleIndices: number[] = [];
         for (let i = 0; i < max ; i++) {
-          let index = (head + i) % product.images.length;
+          const index = (head + i) % product.images.length;
           visibleIndices.push(index);
         }
         return visibleIndices;
@@ -69,13 +75,6 @@ export const ProductPage = () => {
 
     return (
         <main>
-            <div className='nav'>
-                <Link fontSize="XS" href='/' className='prev'>Главная</Link>
-                /
-                <Link fontSize="XS" href='/' className='prev'>Каталог</Link>
-                /
-                <Link fontSize="XS" href='/'>{product.name}</Link>
-            </div>
             <Gallery gap='50px' column={2} className={style.product}>
                 <div className={style.flex}>
                     <div className={`${style.photos} ${count < 5 ? style.few : ''}`}>
@@ -84,7 +83,7 @@ export const ProductPage = () => {
                         </LinkBtn>}
                         {visiblePhotos.map((index) => (
                             <img
-                                key={index}
+                                key={product.images[index]}
                                 src={product.images[index]}
                                 id={`${index}`}
                                 alt={product.name}
@@ -117,11 +116,9 @@ export const ProductPage = () => {
                     <div className={style.characteries}>
                         <div> {formatString(product.material)} </div>
                         <div> {formatString(product.gemstone)} </div>
-                        {product.characteries.map((item) => (
-                            <div>
-                                {Object.entries(item).map(([key, value]) => (
-                                    `${key}: ${value}`
-                                ))}
+                        {product.characteries && Object.entries(product.characteries).map(([key, value]) => (
+                            <div key = {key}>
+                                {key}: {value}
                             </div>
                         ))}
                     </div>
@@ -139,7 +136,7 @@ export const ProductPage = () => {
                         price={Catalog[index].price}
                         rating={Catalog[index].rating}
                         href={Catalog[index].href}
-                        imageSrc={Catalog[index].imageSrc}
+                        images={Catalog[index].images}
                         favorite={Catalog[index].favorite}
                         key={hashId()}
                     />

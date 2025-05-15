@@ -7,7 +7,7 @@ interface Rating {
 }
 
 const Rating = ({rating}: Rating) => {
-    let res = [];
+    const res = [];
     for (let i = 0; i < 5; i++) {
         if (i<=rating) {
             if (i+1<=rating) {

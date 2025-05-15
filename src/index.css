@@ -1,14 +1,14 @@
 
 @font-face {
   font-family: 'Moniqa';
-  src: url('Moniqa-Display.ttf') format('truetype');
+  src: url('/Moniqa-Display.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Poiret One';
-  src: url('PoiretOne-Regular.ttf') format('truetype');
+  src: url('/PoiretOne-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -37,8 +37,12 @@ body {
 
 main {
   position: relative;
-  padding:100px;
-  padding-top:206px;
+  padding: 100px;
+  margin-top:206px;
+}
+
+.nav + main {
+  padding-top: 123px;
 }
 
 img {
@@ -50,10 +54,11 @@ section {
 }
 
 .nav {
+  position: absolute;
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 50px 0;
+  padding: 50px 100px;
 }
 
 .prev {

@@ -36,3 +36,8 @@
     justify-content: flex-end;
     gap: 30px;
 }
+
+button[disabled] {
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+}

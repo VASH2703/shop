@@ -8,11 +8,6 @@ export const Sertificate = () => {
 
     return (
         <main>
-            <div className='nav'>
-                <Link fontSize="XS" href='/' className='prev'>Главная</Link>
-                /
-                <Link fontSize="XS" href='/'>Подарочные сертификаты</Link>
-            </div>
             <Hl1>Подарочные сертификаты</Hl1>
             <div className={style.card}>
                 <div className={style.img}>

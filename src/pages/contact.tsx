@@ -6,11 +6,6 @@ export const Contact = () => {
     const note = 'Вход со двора';
     return (
         <main>
-            <div className='nav'>
-                <Link fontSize="XS" href='/' className='prev'>Главная</Link>
-                /
-                <Link fontSize="XS" href='/'>Подарочные сертификаты</Link>
-            </div>
             <Hl1>Контакты</Hl1>
             <div className={style.content}>
                 <div className={style.map}>

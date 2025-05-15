@@ -9,17 +9,11 @@ export const Order = () => {
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const index = parseInt(event.target.value);
-        console.log(event.target);
         setObtain(index);
     }
 
     return (
         <main>
-            <div className='nav'>
-                <Link fontSize="XS" href='/' className='prev'>Главная</Link>
-                /
-                <Link fontSize="XS" href='/'>Оформление заказа</Link>
-            </div>
             <Hl1>Оформление заказа</Hl1>
             <div className={style.content} >
                 <div className={style.form}>

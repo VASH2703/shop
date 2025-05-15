@@ -8,25 +8,27 @@ export interface MapItemProps {
     accent?: boolean;
 }
 
+export interface CategoryProps extends Omit<MapItemProps, 'icon'> {
+    key: string;
+}
+
 export type MapProps = MapItemProps[];
 
-export interface ProductItemProps extends Omit<MapItemProps, 'icon'> {
+export type CategoryMapProps = CategoryProps[];
+
+export interface ProductItemProps extends Omit<MapItemProps, 'icon' | 'imageSrc'> {
+    id: string;
     price: string;
     oldPrice?: string;
     rating?: number;
     favorite?: boolean;
+    category: string;
+    material: string[];
+    gemstone: string[];
+    collection?: string;
+    images: string[];
+    characteries?: Record<string,string>;
 }
 
 export type ProductListProps = ProductItemProps[];
 
-export interface Character {
-    [key: string]: string;
-}
-
-export interface FullProduct extends Omit<ProductItemProps, 'accent' | 'imageSrc'> {
-    images: string[];
-    characteries: Character[];
-    collection?: string;
-    material: string[];
-    gemstone: string[];
-}

@@ -15,13 +15,13 @@ export const Main = () => {
             </Gallery>
             <section className={style.slogan}>
                 <div className={style.description}>Украшения - это отличный способ подчеркнуть индивидуальность, стиль и творческий подход к моде</div>
-                <img src="ring.png" className={style.img}/>
+                <img src="/ring.png" className={style.img}/>
                 <div className={style.description}>Со временем развития моды и искусства все больше стилей украшений появляется на свет</div>
             </section>
             <Hl1>Хит продаж</Hl1>
             <Gallery className={style.hits}>
                 { Hits.map ((item) => (
-                    <Offer name={item.name} price={item.price} imageSrc={item.imageSrc || ''} href={item.href} accent={item.accent}/>
+                    <Offer name={item.name} price={item.price} imageSrc={item.images[0] || ''} href={item.href} accent={item.accent}/>
                 ))}
                 <BtnAnchor href="/" className={style.toCat}>Перейти в каталог</BtnAnchor>
             </Gallery>

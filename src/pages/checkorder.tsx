@@ -1,6 +1,5 @@
-import { ChangeEvent, useState } from 'react';
-import { Hl1,  Hl4,  Input, Link, RadioItem, Select, Button} from "../UI";
-import Cheque from "./Catalog/cheque";
+
+import { Hl1,  Hl4,  Input, Link, Button} from "../UI";
 import style from './checkorder.module.css';
 import { Delivery, Status } from '../svg';
 
@@ -8,11 +7,6 @@ export const CheckOrder = () => {
 
     return (
         <main>
-            <div className='nav'>
-                <Link fontSize="XS" href='/' className='prev'>Главная</Link>
-                /
-                <Link fontSize="XS" href='/'>Статус заказа</Link>
-            </div>
             <Hl1>Проверить статус заказа</Hl1>
             <div className={style.content} >
                 <div className={style.search}>
